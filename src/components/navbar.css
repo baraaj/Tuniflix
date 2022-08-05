@@ -1,14 +1,57 @@
  .navbar{
     color:white;
-    font-size: 14px;
+    font-size: 16px;
 
  }
 .logo{
    color:red;
    font-size: large;
-   font-size: 40px;
+   font-size: 30px;
+   height: 36px;
+   margin-right: 40px;
+  
     
 }
 .container{
-
+          padding:0px 50px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height:70px;
+}
+img{
+   height:30px;
+   width: 30px;
+   border-radius: 5px;
+   object-fit: cover;
+   cursor: pointer;
+   
+}
+.left{
+   display: flex;
+   align-items: center;
+}
+.right{
+   display: flex;
+   align-items: center;
+   
+}
+span{
+   margin-right: 20px;
+   cursor: pointer;
+   
+}
+.icon{
+   margin: 0px 15px;
+   cursor: pointer;
+   
+}
+.profile :hover + .options{
+   display: flex;
+   flex-direction: column;
+   position: absolute;
+}
+.options{
+   display: none;
+   background-color: var(--main-color);
 }
