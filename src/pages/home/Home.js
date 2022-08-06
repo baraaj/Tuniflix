@@ -1,10 +1,10 @@
  import './home.css' ;
- import img2 from '../images/movies.jpeg';
+ import img2 from '../../images/movies.jpeg';
   
-import Navbar from '../components/navbar/Navbar';
-import Featured from '../components/featured/Featured';
-import List from '../components/list/List';
-import Footer from '../components/footer/Footer';
+import Navbar from '../../components/navbar/Navbar';
+import Featured from '../../components/featured/Featured';
+import List from '../../components/list/List';
+import Footer from '../../components/footer/Footer';
 const Home = () => {
     return (
         <div className="home">
