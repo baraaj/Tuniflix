@@ -1,11 +1,13 @@
 .featured{
-    height:90vh;
+    height:700px;
     position:relative;
+    
 }
-.featured img{
+.featured .img2{
     height: 100%;
     width: 100%;
     object-fit: cover;
+   
 }
 .info{
   width: 35%;
@@ -15,15 +17,18 @@
   color: white;
   display: flex;
   flex-direction: column;
+  
+ 
 }
 .info img{
     width: 400px;
-    height: 100px;
+    height: 60px;
 }
 .buttons{
     display: flex;
+      
 }
-.button{
+button{
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -38,11 +43,31 @@
 background-color: white;
 color: var(--main-color);
 }
-.info{
+.more{
     background-color: gray;
     color: white;
 }
 .desc{
     margin:20px 0px;
     font-size: 16px;
+}
+.buttons span{
+    margin-left: 5px;
+}
+.category{
+    position:absolute;
+    top:150px;
+    left:50px;
+    font-size: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.category select{
+    cursor: pointer;
+    background-color: var(--main-color);
+    border: 1px solid white;
+    color: white;
+    margin-left: 20px;
+    padding: 5px;
 }
