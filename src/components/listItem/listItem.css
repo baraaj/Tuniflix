@@ -1,37 +1,46 @@
 .listItem{
-    width:225px;
+    min-width:225px;
    height: 120px;
     background-color: white;
     margin-right: 5px;
-    
+    overflow: hidden;
     color: white;
-    
+   
 }
  
  
 .listItem .img4{
     object-fit: cover;
-    width: 225px;
+    width: 100%;
     height: 100%;
 }
 .listItem :hover{
-   width: 325px;
- height: 240px;  
+width: 325px;
+ height: 300px;  
  box-shadow: 0px 2px 0px 15px rgba(0,0,0,0.26);
 -webkit-box-shadow: 0px 2px 0px 15px rgba(0,0,0,0.26);
 -moz-box-shadow: 0px 2px 0px 15px rgba(0,0,0,0.26);
  top: -150px;
+ position: absolute;
+  border-radius: 5px;
+  background-color: var(--main-color);
   
   
 }
-.listItem .itemInfo{
-    display: none;
+.listItem :hover + .img4{
+    height: 140px;
 }
-.listItem :hover + .img4 {
-    height: 140px; 
- }
- .listItem :hover+ .itemInfo{
-    display: inline;
-     background-color: var(--main-color);
-     
- }
+.itemInfo{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    height: 160px;
+} 
+ 
+.icons{
+    display: flex;
+    margin-bottom: 10px;
+}
+.icon{
+    
+}

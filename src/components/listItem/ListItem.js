@@ -8,18 +8,23 @@ import { useState } from 'react';
  
 const ListItem = ({index}) => {
     const [isHovered,setIsHovered]=useState(false);
+    const trailer="https://www.youtube.com/watch?v=_kRab62q54M.mp4";
     return (
         <div className="listItem" 
         onMouseEnter={()=>setIsHovered(true)} 
-        onMouseLeave={()=>setIsHovered(true)}
-        style={{left:isHovered && index*225-50}}>
+        onMouseLeave={()=>setIsHovered(false)}
+        style={{left:isHovered && index*225-50 +index*2.5}}>
+          
             <img className='img4' src={img4} alt='' />
+           {isHovered && (
+            <>
+            <video src="/build/videos/arcnet.io(7-sec).mp4" type="video/mp4" autoPlay={true} />
             <div className='itemInfo'>
             <div className='icons'>
-            <FaPlay />
-            <RiAddLine />
-            <AiOutlineLike />
-            <AiOutlineDislike />
+            <FaPlay className="icon"/>
+            <RiAddLine className="icon"/>
+            <AiOutlineLike className="icon"/>
+            <AiOutlineDislike className="icon"/>
             </div>
             <div className='itemInfoTop'>
                 <span>1hour 14min</span>
@@ -32,7 +37,10 @@ const ListItem = ({index}) => {
             <div className='genre'>
                   Action
                </div>
-            </div>
+            </div> 
+            </>
+            )}
+            
         </div>
     );
 }
