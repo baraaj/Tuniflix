@@ -2,7 +2,7 @@ import React from 'react';
 import './navbar.css';
 import {BsSearch} from 'react-icons/bs';
 import {IoMdNotificationsOutline} from 'react-icons/io';
-import img1 from '../images/user.png';
+import img1 from '../../images/user.png';
 import {IoIosArrowDown} from 'react-icons/io';
 import { useState } from 'react';
  

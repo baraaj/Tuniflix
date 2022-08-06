@@ -1,7 +1,7 @@
  import './home.css' ;
  import img2 from '../images/movies.jpeg';
   
-import Navbar from './../components/Navbar';
+import Navbar from '../components/navbar/Navbar';
 import Featured from '../components/featured/Featured';
 import List from '../components/list/List';
 const Home = () => {
@@ -9,6 +9,9 @@ const Home = () => {
         <div className="home">
               <Navbar />
               <Featured type="movie"/>
+              <List/>
+              <List/>
+              <List/>
               <List/>
         </div> )
 }
