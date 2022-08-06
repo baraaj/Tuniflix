@@ -1,8 +1,8 @@
 .list{
-    width: 100%;
+width: 100%;
   margin-top: 10px;
   padding: 20px 0px;
-
+   
     
 }
 .listTitle{
@@ -18,15 +18,17 @@
 .wrapper.container{
     margin-left: 50px;
     display: flex;
-    width:max-content;
+    
     margin-top: 30px;
     margin-bottom:20px;
-    
+    width: max-content;
 
 }
+
 .wrapper{
     position: relative;
     margin-top: 25px;
+     
 }
 .sliderArrow{
     width:50px ;
