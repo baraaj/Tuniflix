@@ -1,6 +1,6 @@
 import React from 'react';
 import './featured.css';
-import img2 from '../../images/movi.jpg';
+import img2 from '../../images/all.jpg';
 import img3 from '../../images/mov.jpg';
 import {FaPlay} from 'react-icons/fa';
 import {AiOutlineInfoCircle} from 'react-icons/ai';
