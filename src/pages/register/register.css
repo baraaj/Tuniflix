@@ -44,7 +44,7 @@
     left: 0;
     
 }
-input{
+.input input{
    flex:9;
    height: 100%;
    border: none;
