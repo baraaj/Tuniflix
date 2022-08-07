@@ -17,10 +17,10 @@ const ListItem = ({index}) => {
           
             <img className='img4' src={img4} alt='' />
            {isHovered && (
-            <>
+            <div>
             <video src="/build/videos/arcnet.io(7-sec).mp4" type="video/mp4" autoPlay={true} />
-            <div className='itemInfo'>
-            <div className='icons'>
+            <div className="itemInfo">
+            <div className="icons">
             <FaPlay className="icon"/>
             <RiAddLine className="icon"/>
             <AiOutlineLike className="icon"/>
@@ -38,7 +38,7 @@ const ListItem = ({index}) => {
                   Action
                </div>
             </div> 
-            </>
+            </div>
             )}
             
         </div>
