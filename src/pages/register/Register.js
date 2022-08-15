@@ -26,12 +26,12 @@ const Register = () => {
                 <h2>Watch Anywhere.Cancel Anytime.</h2>
                 <p>Ready to watch? Enter your email to create or restart your membership.</p>
                 {!email ?(
-                <form className='input'>
-                    <input type="email" placeholder='Enter your Email' ref={emailRef}></input>
+                <form className='inputs'>
+                    <input className='in'type="email" placeholder='Enter your Email' ref={emailRef}></input>
                     <button className='registerButton' onClick={()=>handleStart()}> Let's get started!</button>
-                    console.log(email)
+                    
                 </form>):(
-                <div className='input'>
+                <div className='inputs'>
                     <input type="password" placeholder='password' ref={passwordRef}></input>
                     <button className='registerButton' onClick={handleFinish}>start</button>
                 </div>)

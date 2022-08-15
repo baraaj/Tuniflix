@@ -4,21 +4,39 @@ import './listItem.css';
 import {FaPlay} from 'react-icons/fa';
 import {RiAddLine} from 'react-icons/ri';
 import {AiOutlineLike,AiOutlineDislike} from 'react-icons/ai';
-import { useState } from 'react';
- 
-const ListItem = ({index}) => {
+import { useState,useEffect } from 'react';
+import axios from 'axios';
+const ListItem = ({index,item}) => {
     const [isHovered,setIsHovered]=useState(false);
-    const trailer="https://www.youtube.com/watch?v=_kRab62q54M.mp4";
+    const [movie,setMovie]=useState({});
+
+    useEffect(() => {
+        const getMovie = async () => {
+          try {
+            const res = await axios.get("/movies/find/" + item, {
+              headers: {
+                token:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZjhkYjM5N2IzMTc5MjU5ZGFjYzNhMyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDU4NTAwOCwiZXhwIjoxNjYxMDE3MDA4fQ.sjUCMJaYN8kYD_Fc12jd5aUnheW1kdGJD4uIZWge8_E",
+              },
+            });
+            
+            setMovie(res.data);
+          } catch (err) {
+            console.log(err);
+          }
+        };
+        getMovie();
+      }, [item]);
     return (
         <div className="listItem" 
         onMouseEnter={()=>setIsHovered(true)} 
         onMouseLeave={()=>setIsHovered(false)}
         style={{left:isHovered && index*225-50 +index*2.5}}>
           
-            <img className='img4' src={img4} alt='' />
+            <img className='img4'src={movie.img} alt='' />
            {isHovered && (
             <div>
-            <video src="/build/videos/arcnet.io(7-sec).mp4" type="video/mp4" autoPlay={true} />
+            <video src={movie.trailer} type="video/mp4" autoPlay={true} />
             <div className="itemInfo">
             <div className="icons">
             <FaPlay className="icon"/>
@@ -27,15 +45,15 @@ const ListItem = ({index}) => {
             <AiOutlineDislike className="icon"/>
             </div>
             <div className='itemInfoTop'>
-                <span>1hour 14min</span>
-                <span className='limit'>+16</span>
-                <span>1999</span>
+                <span>{movie.duration}</span>
+                <span className='limit'>+{movie.limit}</span>
+                <span>{movie.year}</span>
             </div>
             <div className='desc'>
-            Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. 
+            {movie.desc}
             </div>
             <div className='genre'>
-                  Action
+                 {movie.genre}
                </div>
             </div> 
             </div>

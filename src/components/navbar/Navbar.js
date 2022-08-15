@@ -5,7 +5,7 @@ import {IoMdNotificationsOutline} from 'react-icons/io';
 import img1 from '../../images/user.png';
 import {IoIosArrowDown} from 'react-icons/io';
 import { useState } from 'react';
- 
+import {Link} from 'react-router-dom';
 const Navbar = () => {
     const [isScrolled,setIsScrolled]=useState(false);
     window.onscroll =()=>{
@@ -19,10 +19,15 @@ const Navbar = () => {
                    <div className="left">
                    
                    <span className='logo'> TuniFlix </span>  
-                  
+                  <Link to='/' className='link'>
                    <span >Homepage  </span>
+                   </Link>
+                   <Link to='/series' className='link'>
                    <span >Series  </span>
+                   </Link>
+                   <Link to='/movies' className='link'>
                    <span >Movies </span>
+                  </Link>
                    <span >New and Popular  </span>
                    <span >My List  </span>
                    </div>

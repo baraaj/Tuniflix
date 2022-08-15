@@ -44,22 +44,7 @@
     left: 0;
     
 }
-.input input{
-   flex:9;
-   height: 100%;
-   border: none;
-   padding: 0 10px;
-}
-.registerButton{
-    flex: 3;
-    left:0;
-    height: 100%;
-    background-color: red;
-    color: white;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-}
+
 .register .container h1{
     font-size: 50px;
 }
@@ -69,14 +54,37 @@
 .register .container p{
     width: 50%;
 }
-.input{
+.inputs{
      
     width: 50%;
    
     display: flex;
     align-items: center;
+    background-color: inherit;
     justify-content: space-between;
     margin-top: 20px;
     height: 50px;
     border-radius: 5px;
+    position: relative;
 }
+.in{
+    flex: 9;
+    height: 50px;
+    border: none;
+    padding: 0 10px;
+    position: absolute;
+    left:0;
+   
+    width: 70%;
+}
+ .registerButton{
+     flex: 1;
+     right: 0;
+     height: 50px;
+     background-color: red;
+     color: white;
+     border: none;
+     font-size: 22px;
+     cursor: pointer;
+     position: absolute;
+ }
