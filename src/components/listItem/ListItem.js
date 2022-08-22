@@ -5,6 +5,7 @@ import {FaPlay} from 'react-icons/fa';
 import {RiAddLine} from 'react-icons/ri';
 import {AiOutlineLike,AiOutlineDislike} from 'react-icons/ai';
 import { useState,useEffect } from 'react';
+import {Link} from "react-router-dom";
 import axios from 'axios';
 const ListItem = ({index,item}) => {
     const [isHovered,setIsHovered]=useState(false);
@@ -27,7 +28,12 @@ const ListItem = ({index,item}) => {
         };
         getMovie();
       }, [item]);
+      console.log(movie);
     return (
+      
+
+        <Link to="/watch" state={{ movies:movie}}>
+             
         <div className="listItem" 
         onMouseEnter={()=>setIsHovered(true)} 
         onMouseLeave={()=>setIsHovered(false)}
@@ -60,6 +66,7 @@ const ListItem = ({index,item}) => {
             )}
             
         </div>
+        </Link>
     );
 }
 

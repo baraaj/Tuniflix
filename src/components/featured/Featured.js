@@ -4,7 +4,36 @@ import img2 from '../../images/all.jpg';
 import img3 from '../../images/mov.jpg';
 import {FaPlay} from 'react-icons/fa';
 import {AiOutlineInfoCircle} from 'react-icons/ai';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 const Featured = ({type}) => {
+    const[content,setContent]=useState({});
+    useEffect(()=>{
+        const getRandomContent=async()=>{
+      try {
+        
+            const res=await axios.get(`/movies/random?type=${type}`,
+            
+            {
+                headers: {
+                  token:
+                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZjhkYjM5N2IzMTc5MjU5ZGFjYzNhMyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDU4NTAwOCwiZXhwIjoxNjYxMDE3MDA4fQ.sjUCMJaYN8kYD_Fc12jd5aUnheW1kdGJD4uIZWge8_E",
+                },
+              }
+            
+            );
+           
+           setContent(res.data[0]);
+      }
+      catch (err) {
+         console.log(err);
+     } 
+    };
+
+       getRandomContent();
+
+    }
+    ,[type]);
     return (
         <div className='featured'>
             {type  && (
@@ -32,8 +61,8 @@ const Featured = ({type}) => {
 
              <img  className='img2' src={img2} alt='' /> 
              <div className='info'>
-             <img   src={img3} alt='' /> 
-             <span className='desc'>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</span>
+             <img   src={content.img} alt='' /> 
+             <span className='desc'>{content.desc}</span>
             
              <div className='buttons'>
                 <button className='play'>
